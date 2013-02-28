@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>
+    <% if content_for?(:title) %>
+      ONTRACK: <%= yield :title %>
+    <% else %>
+      ONTRACK
+    <% end %>
+  </title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<%= render 'layouts/header' %>
+
+  <%#= image_tag("tagline.png", alt: "Creative Project Management Made Easy", id: "tagline") %>
+  <div class="container">
+    <section id="content">
+      <%# START:notifications %>
+      <% if notice %>
+        <p class="notification notice">
+          <%= notice %>
+        </p>
+      <% end %>
+
+      <% if alert %>
+        <p class="notification alert">
+          <%= alert %>
+        </p>
+      <% end %>
+      <%# END:notifications %>
+      <%= yield %>
+    </section>
+
+  </div>
+  <footer id="page_footer">
+    <ul>
+      <li><%= link_to "Contact", "" %></li>
+      <li><%= link_to "Help", "" %></li>
+      <li><%= link_to "File a Bug", "" %></li>
+    </ul>
+    <p>&copy; 2013 G16. All Rights Reserved. All Wrongs Reversed.</p>
+  </footer>
+</body>
+</html>
+

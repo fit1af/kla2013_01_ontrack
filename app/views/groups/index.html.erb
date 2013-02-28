@@ -1,0 +1,17 @@
+<h1>Listing groups and members </h1>
+<%= currently_at 'Groups' %>
+
+<dl class="grouplist">
+  <% @groups.each do |group| %>
+    <dt><%= group.name %></dt>
+      <% group.users.each do |user| %>
+        <dd><%= user.email %> &nbsp; <%= link_to(image_tag('edit.png'),edit_user_path(user)) %></dd>
+      <% end %>
+  <% end %>    
+</dl>
+
+
+  <br />
+<% if current_user.group.name == 'admin' %>
+	<%= link_to 'New Group', new_group_path %>
+<% end %>

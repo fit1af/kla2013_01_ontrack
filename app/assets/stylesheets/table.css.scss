@@ -1,0 +1,28 @@
+
+table.data_table {
+  border: 1px solid #CCB;
+  margin-bottom: 2em;
+  width: 100%;
+}
+table.data_table th {
+  background: url('/assets/grain_dark.gif');
+  border: 1px solid #CCB;
+  color: #555;
+  text-align: left;
+}
+table.data_table tr {border-bottom: 1px solid #DDD;}
+table.data_table td, table th {padding: 10px;}
+table.data_table td {
+  /*background: url('/assets/grain_light.gif');*/
+  border: 1px solid #DDC;
+}
+.list_line_odd {
+    background: url('/assets/grain_light.gif');
+  }
+
+.list_line_even {
+    background:   #f8b0f8;
+    background: url('/assets/grain.gif');
+  }
+
+.current_state { background: lightgreen; }
